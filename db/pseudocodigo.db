@@ -1,0 +1,36 @@
+CREATE DATABASE pseudocodigo;
+USE pseudocodigo;
+
+-- Tabla de usuarios
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE temas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    bloqueado TINYINT DEFAULT 0
+);
+
+CREATE TABLE progreso (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_tema INT,
+    completado TINYINT DEFAULT 0,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY (id_tema) REFERENCES temas(id)
+);
+
+-- Insertar usuario de prueba (password: 1234)
+INSERT INTO usuarios (nombre, email, password) 
+VALUES ('Juan Pérez', 'juan@test.com', MD5('1234'));
+
+INSERT INTO temas (nombre, descripcion) VALUES
+('Tema 1: Introducción al Pseudocódigo', 'Aprende qué es el pseudocódigo y cómo estructurar un algoritmo.'),
+('Tema 2: Estructuras Secuenciales', 'Ejecuta instrucciones en orden.'),
+('Tema 3: Condicionales', 'Usa SI...ENTONCES...SINO para tomar decisiones.'),
+('Tema 4: Bucles', 'Repite acciones con MIENTRAS, REPETIR o PARA.');
