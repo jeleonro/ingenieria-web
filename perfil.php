@@ -11,7 +11,7 @@ $id_usuario = $_SESSION['id_usuario'];
 $usuario = $_SESSION['nombre'];
 
 // Obtener los temas
-$sql = "SELECT t.id, t.nombre, t.descripcion,
+$sql = "SELECT t.id, t.nombre, t.descripcion, t.imagen,
         IFNULL(p.completado, 0) AS completado
         FROM temas t
         LEFT JOIN progreso p ON t.id = p.id_tema AND p.id_usuario = ?";
@@ -27,12 +27,13 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - PseudoLearning</title>
-    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/perfilv2.css">
 </head>
 <body>
+    
     <header>
-        <h1>👋 Bienvenido, <?php echo htmlspecialchars($usuario); ?>!</h1>
-        <a href="logout.php" class="volver">Cerrar Sesión</a>
+        <h1>PSeudoLearning - Inicio🐾</h1>
+        <a href="main.php" class="volver">⬅Volver</a>
     </header>
 
     <main class="contenedor-lecciones">
@@ -52,9 +53,10 @@ $result = $stmt->get_result();
             if (!$completado) $bloquear = true;
         ?>
         <div class="tarjeta <?php echo $bloqueado ? 'bloqueado' : ''; ?>">
-            <h2><?php echo htmlspecialchars($tema['nombre']); ?></h2>
+            <img src="<?php echo htmlspecialchars($tema["imagen"]); ?>" alt="imagen">    
+        <h2><?php echo htmlspecialchars($tema['nombre']); ?></h2>
             <p><?php echo htmlspecialchars($tema['descripcion']); ?></p>
-
+            
             <?php if ($bloqueado): ?>
                 <button class="btn bloqueado" disabled>🔒 Bloqueado</button>
             <?php else: ?>
@@ -63,5 +65,9 @@ $result = $stmt->get_result();
         </div>
         <?php endwhile; ?>
     </main>
+
+  <footer class="footer">
+    <p> @2025 Pseudocodigo-con-profe-andre - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

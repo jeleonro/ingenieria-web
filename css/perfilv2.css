@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === CUERPO === */
+body {
+  background: linear-gradient(135deg, #0a1f2d, #122f44);
+  color: #ececec;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+/* === HEADER === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  background: rgba(1, 42, 59, 0.295);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  width: 100%;
+  max-width: 5000px;
+  height: 5000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  color: #FDCFFA;
+}
+
+/* === BOTÓN VOLVER === */
+.volver {
+  text-decoration: none;
+  background: rgba(63, 54, 54, 0.15);
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #ececec;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.volver:hover {
+  background: rgb(93, 235, 215);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(7, 65, 115);
+  text-decoration: none;
+}
+
+/* lecciones*/
+.contenedor-lecciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.tarjeta {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: 400px;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.tarjeta h2 {
+  font-size: 1.4em;
+  margin-bottom: 12px;
+  color: #21E6C1;
+}
+
+.tarjeta p {
+  font-size: 0.95em;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.tarjeta.bloqueado {
+  opacity: 0.5;
+  filter: grayscale(80%);
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn.bloqueado {
+  background: gray;
+  cursor: not-allowed;
+  border: none;
+}
+
+/*boton */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #21E6C1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0078a0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(33, 230, 193, 0.4);
+}
+
+.tarjeta img {
+  width: 100%;
+  max-width: 400px; /* Tamaño máximo para evitar que se estire demasiado */
+  height: 180px; /* Altura fija equilibrada */
+  object-fit: cover; /* Recorta la imagen sin deformarla */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 15px; /* Espacio con el texto */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta:hover img {
+  transform: scale(1.03);
+}
+
+/*footer*/
+.footer {
+  background: #17313E;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.05);
+  margin-top: 190px;
+}

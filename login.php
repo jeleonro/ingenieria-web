@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         $_SESSION["id_usuario"] = $user["id"];
         $_SESSION["nombre"] = $user["nombre"];
-        header("Location: perfil.php");
+        header("Location: main.php");
         exit;
     } else {
         $error = "❌ Usuario o contraseña incorrectos";
@@ -49,19 +49,21 @@ if (isset($_POST["register"])) {
         }
     }
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/stylelogin.css">
+    <link rel="stylesheet" href="./css/styleloginv3.css">
     <title>Login</title>
 </head>
 
 <body>
-    <h2>Bienvenido a <strong>PSEUDOLEARNING</strong></h2>
+    <div class="login-letra">
+        <h2>Bienvenido a <strong>PSEUDOLEARNING</strong></h2>
+    </div>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="" method="post">
@@ -70,7 +72,7 @@ if (isset($_POST["register"])) {
                 if (isset($error))
                     echo "<p style='color:red;'>$error</p>";
                 if (isset($success))
-                    echo "<p style='color:green;'>$success</p>";
+                    echo "<p style='color:rgb(98, 0, 255);'>$success</p>";
                 ?>
                 <span>o usa tu correo para registrarte</span>
                 <input type="text" name="nombre" placeholder="Nombre completo" required />
@@ -79,6 +81,8 @@ if (isset($_POST["register"])) {
                 <button type="submit" name="register">Registrarse</button>
             </form>
         </div>
+
+
         <div class="form-container sign-in-container">
             <form action="#" method="post">
                 <h1>Iniciar Sesión</h1>
@@ -125,7 +129,7 @@ if (isset($_POST["register"])) {
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hola, Programador!</h1>
-                    <p>Ingresa y comienza la aventura codificando</p>
+                    <p>✨ Ingresa y comienza la aventura codificando ✨</p>
                     <button class="ghost" id="signUp">REGISTRARSE</button>
                 </div>
             </div>
@@ -134,5 +138,4 @@ if (isset($_POST["register"])) {
     <script src="./js/login.js"></script>
     <script src="./js/recuperar.js"></script>
 </body>
-
 </html>
