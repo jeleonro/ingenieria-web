@@ -1,5 +1,5 @@
 <?php
-$host = "localhost";
+$host = "localhost:3309";
 $user = "root";   // usuario por defecto de XAMPP
 $pass = "";       // sin contraseña por defecto
 $db   = "pseudocodigo";

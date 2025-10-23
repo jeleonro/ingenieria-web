@@ -24,14 +24,13 @@ $usuario = $_SESSION['nombre'];
 <body>
 
   <header class="header">
-    <div class="container">
+    <div class="container principal">
       <h1 class="logo">Pseudocodigo con profe andre</h1>
       <nav class="nav">
         <ul class="menu-main">
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="tema.php">Lecciones</a></li>
           <li><a href="#equipo">Equipo</a></li>
-          <li><a href="#">Perfil</a></li>
+          <li><a href="perfil.php">Perfil</a></li>
           <a href="logout.php" class="volver">Cerrar Sesión</a>
         </ul>
       </nav>
@@ -59,14 +58,14 @@ $usuario = $_SESSION['nombre'];
           <h3>Base esencial para la programación</h3>
           <p>El pseudocódigo enseña pensamiento lógico y estructurado, habilidades fundamentales antes de aprender
             cualquier lenguaje como Java, Python o C++.</p>
-          <img src="img/thinking.jpg" alt="Icono de programación">
+          <img src="css/img/thinking.jpg" alt="Icono de programación">
         </div>
 
         <div class="card">
           <h3>Mejora la comprensión algorítmica</h3>
           <p>Un informe de la Universidad Politécnica de Madrid (2019) señala que el uso de pseudocódigo mejora hasta en
             40 % la comprensión de algoritmos frente al aprendizaje directo de un lenguaje de programación.</p>
-          <img src="img/algorithm.jpg" alt="">
+          <img src="css/img/algorithm.jpg" alt="">
         </div>
 
         <div class="card">
@@ -74,7 +73,7 @@ $usuario = $_SESSION['nombre'];
           <p>Aprender pseudocódigo fomenta habilidades útiles más allá de la programación: pensamiento lógico y
             analítico,
             solución de problemas, planificación paso a paso y claridad en la comunicación técnica.</p>
-          <img src="img/skill.jpg" alt="">
+          <img src="css/img/skill.jpg" alt="">
         </div>
       </div>
     </div>
@@ -87,7 +86,7 @@ $usuario = $_SESSION['nombre'];
       <div class="row">
         <div class="col">
           <div class="img-circular">
-            <img src="img/cont.jpg" alt="" class="img-fluid">
+            <img src="css/img/cont.jpg" alt="" class="img-fluid">
           </div>
           <h3>Jesús André</h3>
           <p>Leon Rodriguez</p>
@@ -95,15 +94,15 @@ $usuario = $_SESSION['nombre'];
 
         <div class="col">
           <div class="img-circular">
-            <img src="img/cont.jpg" alt="" class="img-fluid">
+            <img src="css/img/cont.jpg" alt="" class="img-fluid">
           </div>
-          <h3>Bruno Contly</h3>
+          <h3>Bruno Conty</h3>
           <p>Ramos La Jara</p>
         </div>
 
         <div class="col">
           <div class="img-circular">
-            <img src="img/cont.jpg" alt="" class="img-fluid">
+            <img src="css/img/cont.jpg" alt="" class="img-fluid">
           </div>
           <h3>Miguel Angel</h3>
           <p>Mory Navincolqui</p>
@@ -111,7 +110,7 @@ $usuario = $_SESSION['nombre'];
 
         <div class="col">
           <div class="img-circular">
-            <img src="img/cont.jpg" alt="" class="img-fluid">
+            <img src="css/img/cont.jpg" alt="" class="img-fluid">
           </div>
           <h3>Arturo Valentino</h3>
           <p>Martínez Castañeda</p>
@@ -119,7 +118,7 @@ $usuario = $_SESSION['nombre'];
 
         <div class="col">
           <div class="img-circular">
-            <img src="img/cont.jpg" alt="" class="img-fluid">
+            <img src="css/img/cont.jpg" alt="" class="img-fluid">
           </div>
           <h3>Leandro Joaquin</h3>
           <p>Romero Huanca</p>
@@ -131,7 +130,7 @@ $usuario = $_SESSION['nombre'];
 
 
   <footer class="footer">
-    <p> @2025 Pseudocodigo-con-profe-andre - Todos los derechos reservados</p>
+    <p> @2025 Pseudolearning - Todos los derechos reservados</p>
   </footer>
 </body>
 
