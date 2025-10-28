@@ -25,7 +25,8 @@ $usuario = $_SESSION['nombre'];
 
   <header class="header">
     <div class="container principal">
-      <h1 class="logo">Pseudocodigo con profe andre</h1>
+      <img src="css/img/PSEUDOLEARNIGN.jpg" alt="">
+      <!-- <h1 class="logo">Pseudocodigo con profe andre</h1> -->
       <nav class="nav">
         <ul class="menu-main">
           <li><a href="#inicio">Inicio</a></li>
