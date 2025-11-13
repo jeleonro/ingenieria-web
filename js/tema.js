@@ -1,3 +1,5 @@
+import { validarPseudocodigo } from './validarPseudocodigo.js';
+
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("modal-leccion");
     const titulo = document.getElementById("titulo-leccion");
@@ -27,35 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("btn-ejecutar").addEventListener("click", () => {
-        const codigo = document.getElementById("editor").value.trim();
+        const codigo = document.getElementById("editor").value;
         const salida = document.getElementById("salida");
+        const resultado = validarPseudocodigo(codigo);
 
-        // Limpia salida anterior
-        salida.textContent = "";
-
-        if (codigo.length === 0) {
-            salida.textContent = "❌ Error: el pseudocódigo está vacío.";
-            return;
+        if (resultado.valido) {
+            salida.textContent = resultado.mensaje;
+            salida.style.color = "green";
+        } else {
+            salida.textContent = resultado.errores.join("\n");
+            salida.style.color = "red";
         }
-
-        // Expresiones regulares básicas para validar estructura tipo PSeInt
-        const tieneInicio = /inicio/i.test(codigo);
-        const tieneFin = /(fin|finproceso|fin algoritmo)/i.test(codigo);
-        const tieneEscribir = /escribir|mostrar/i.test(codigo);
-        const tieneLeer = /leer|input/i.test(codigo);
-
-        if (!tieneInicio || !tieneFin) {
-            salida.textContent = "⚠️ Error: falta 'Inicio' o 'Fin' en tu pseudocódigo.";
-            return;
-        }
-
-        if (!tieneEscribir && !tieneLeer) {
-            salida.textContent = "⚠️ Tu pseudocódigo debería incluir alguna instrucción como 'Escribir' o 'Leer'.";
-            return;
-        }
-
-        // Si pasa todas las validaciones
-        salida.textContent = "✅ Correcto: tu pseudocódigo tiene estructura válida.";
     });
 
     document.getElementById("btn-completar").addEventListener("click", () => {

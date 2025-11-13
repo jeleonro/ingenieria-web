@@ -90,6 +90,6 @@ const idUsuario = <?php echo (int)$id_usuario; ?>;
 const idTema = <?php echo (int)$id_tema; ?>;
 </script>
 
-<script src="./js/tema.js"></script>
+<script type="module" src="js/tema.js"></script>
 </body>
 </html>
